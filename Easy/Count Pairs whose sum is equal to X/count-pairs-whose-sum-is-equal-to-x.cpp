@@ -55,10 +55,6 @@ class Solution{
         Node* temp2 = head2;
         int pairCount = 0;
         unordered_map <int, int> insertMap;
-        // while(temp1 != NULL){
-        //     insertMap[temp1->data]++;
-        //     temp1=temp1->next;
-        // }
         while(temp2 != NULL){
             insertMap[temp2->data]++;
             temp2=temp2->next;

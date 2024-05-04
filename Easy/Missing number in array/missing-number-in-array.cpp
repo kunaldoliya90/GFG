@@ -13,12 +13,12 @@ using namespace std;
 class Solution{
   public:
     int missingNumber(vector<int>& array, int n) {
-        int arraySum = 0;
+        int forSum = (n * (n + 1)) / 2;
+        int loopSum = 0;
         for(int i=0; i<n-1; i++){
-            arraySum += array[i];
+            loopSum += array[i];
         }
-        int sumN = (n*(n+1))/2;
-        return (sumN - arraySum);
+        return forSum- loopSum;
     }
 };
 

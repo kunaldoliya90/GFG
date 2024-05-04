@@ -10,23 +10,16 @@ using namespace std;
 
 class Solution{
 public:
-    int remove_duplicate(int a[],int n){
-         if (n == 0 || n == 1) // Base case: if array has 0 or 1 element, no duplicates to remove
-        return n;
-
-    int lastDistinctIndex = 0; // Index to store the last position where a distinct element was found
-
-    // Traverse the array starting from the second element
-    for (int i = 1; i < n; i++) {
-        // If the current element is different from the previous distinct element
-        if (a[i] != a[lastDistinctIndex]) {
-            lastDistinctIndex++; // Move to the next position
-            a[lastDistinctIndex] = a[i]; // Copy the current element to the next position
+int remove_duplicate(int a[],int n){
+        // code here
+        int res=1;
+        for(int i=1;i<n;i++){
+            if(a[i]!=a[res-1]){
+            a[res]=a[i];
+            res++;
+            }
         }
-    }
-
-    // Return the size of the modified array containing only distinct elements
-    return lastDistinctIndex + 1;
+        return res;
     }
 };
 

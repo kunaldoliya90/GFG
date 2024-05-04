@@ -7,33 +7,31 @@ using namespace std;
 class Solution{
     public:
     
-    void rotateArr(int arr[], int d, int n){
-    d = d % n;
-    
-    int start = 0;
-    int end = d - 1;
-    while (start < end) {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+    //Function to rotate an array by d elements in counter-clockwise direction. 
+   void rotateArr(int arr[], int d, int n){
+    d = d % n; // Adjusting d to be within the range of the array size
+    int s = 0;
+    int e = n-1;
+    while(s < e){
+        swap(arr[s], arr[e]);
+        s++;
+        e--;
     }
-    
-    start = d;
-    end = n - 1;
-    while (start < end) {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+    s = 0;
+    e = n-d-1;
+    while(s < e){
+        swap(arr[s], arr[e]);
+        s++;
+        e--;
     }
-
-    start = 0;
-    end = n - 1;
-    while (start < end) {
-        swap(arr[start], arr[end]);
-        start++;
-        end--;
+    s = n-d;
+    e = n-1;
+    while(s < e){
+        swap(arr[s], arr[e]);
+        s++;
+        e--;
     }
-    }
+}
 };
 
 //{ Driver Code Starts.

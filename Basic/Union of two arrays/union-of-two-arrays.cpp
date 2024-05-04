@@ -11,19 +11,19 @@ class Solution{
     public:
     //Function to return the count of number of elements in union of two arrays.
     int doUnion(int a[], int n, int b[], int m)  {
-        int count = 0;
-        unordered_map <int,int> storingValue;
+        int ans = 0;
+        map <int, int> store;
         for(int i=0; i<n; i++){
-            storingValue[a[i]]++;
+            if(store.find(a[i]) == store.end()){
+                store[a[i]]++;
+            }
         }
         for(int i=0; i<m; i++){
-            storingValue[b[i]]++;
+            if(store.find(b[i]) == store.end()){
+                store[b[i]]++;
+            }
         }
-        for(auto pair: storingValue){
-            count++;
-            // cout<<pair.first<< " : "<<pair.second<<endl;
-        }
-        return count;
+        return store.size();
     }
 };
 
